@@ -1,34 +1,37 @@
 const express = require('express');
 const _ = require('underscore')
+const lodash = require('lodash')
 
 const abc = require('../introduction/intro')
 const loggerModule = require('../logger/logger.js')
-const formatterModule = require('../validator/formatter') 
+const formatterModule = require('../validator/formatter')
 const helperModule = require('../util/helper')
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
-    console.log('My batch is', abc.name)
-    abc.printName()
-    loggerModule.printInfo()
-    formatterModule.trimMyString()
-    formatterModule.getUpperCaseString()
-    formatterModule.changetoLowerCase()
-    helperModule.getTodaysDate()
-    helperModule.getCurrentMonth()
-    helperModule.printBatchDetails()
-    let weekdend = ['Saturday','Sunday','Monday']
-    let result = _.first(weekdend, 2)
-    console.log('Unserscore example resultr is ',result)
+    let month = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+    console.log(lodash.chunk(month, 3));
+
+    let oddNumber = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+    console.log(lodash.tail(oddNumber));
+
+    let num = lodash.union([3, 4, 3, 5, 6, 5, 4, 3], [3, 5, 6, 3, 7, 6], [4, 5, 3, 2, 1, 6, 5, 7], [4, 5, 3, 2, 6, 7, 3, 8], [4, 3, 2, 6, 5, 7, 8, 2])
+    console.log(num);
+
+    let frompairs = lodash.fromPairs([['horror','The Shining'],["drama","Titanic"],["thriller","Shutter Island"],["fantasy","Pans Labyrinth"]])
+    console.log(frompairs)
+
+        
+
     res.send('My second ever api!')
 });
 
 
-router.get('/test-you', function(req, res){
+router.get('/test-you', function (req, res) {
     res.send('This is the second routes implementation')
 })
 
-router.get('/give-me-students-data',function(req, res){
+router.get('/give-me-students-data', function (req, res) {
 
 })
 module.exports = router;
