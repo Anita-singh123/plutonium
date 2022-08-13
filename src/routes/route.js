@@ -34,5 +34,72 @@ router.get('/student-details/:name', function(req, res){
     
     res.send('Dummy response')
 })
+    router.get('/movies', function (req,res){
+        let arr=['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+        res.send(arr)
+    })
+
+
+    router.get('/movies/:indexNumber', function (req,res){
+        let params=req.params
+        let result= params.indexNumber
+        // console.log(result);
+
+        let arr = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+        if(result>=arr.length){
+            res.send("this indexNumber is not present")
+        }
+        res.send(arr[result]);
+    })
+
+
+    router.get('/films', function (req,res){
+        let arr=[ {
+            id: 1,
+            name: "The Shining"
+           }, {
+            id: 2,
+            name: "Incendies"
+           }, {
+            id: 3,
+            name: "Rang de Basanti"
+           }, {
+            id: 4,
+            name: "Finding Nemo"
+           }]
+
+           res.send(arr)
+    })
+
+    router.get('/films/:filmId', function (req,res){
+        let params= req.params
+        let result = params.filmId
+        //console.log(result);
+        let arr=[ {
+            id: 1,
+            name: "The Shining"
+           }, {
+            id: 2,
+            name: "Incendies"
+           }, {
+            id: 3,
+            name: "Rang de Basanti"
+           }, {
+            id: 4,
+            name: "Finding Nemo"
+           }]
+         for(let i of arr){
+            if(i.id==result){
+                res.send(i)
+            }
+         }
+         res.send("this is not find")
+         
+
+    })
+
+
+
+
 
 module.exports = router;
