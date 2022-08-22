@@ -1,4 +1,4 @@
-const express = require('express');
+var express = require('express');
 var bodyParser = require('body-parser');
 
 const route = require('./routes/route.js');
@@ -9,17 +9,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb+srv://functionup-cohort:3bMssIUqmBmIqb3e@cluster0.3ccgp0v.mongodb.net/PK-100?retryWrites=true&w=majority"
-, {
+mongoose.connect("mongodb+srv://Soumyasingh:SomaviSingh@cluster0.kh1eemi.mongodb.net/AnitaSingh", 
+{
    useNewUrlParser: true 
-}
-).then( () => {console.log( "MongoDb is connected")}  )
+})
+.then( () => {console.log( "MongoDb is connected")}  )
 .catch( err => console.log(err))
 
 
 
 
-app.use('/', route);
+app.use('/',route);
 
 app.listen(process.env.PORT || 3000, function() {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
