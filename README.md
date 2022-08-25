@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Next() :
 - it is a callback function in a middleware
 - it passses the control to the subsequent function
@@ -75,3 +76,6 @@ time , IP, Route should be printed on each line in terminal( every time an api i
 2010-08-19 14:00:00 , 123.459.898.734 , /createUser
 2010-08-19 14:00:00 , 123.459.898.734 , /basicAPi
 2010-08-19 14:00:00 , 123.459.898.734 , /falanaAPI
+=======
+# plutonium
+>>>>>>> 6e1e776565be128891e5d12496f1d10af40a35b1
