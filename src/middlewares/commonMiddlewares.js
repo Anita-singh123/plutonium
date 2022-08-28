@@ -1,6 +1,6 @@
 
 const mid1 = function (req, res, next) {
-    let data = req.headers.isFreeAppUser || req.headers.isfreeappuser
+    let data = req.headers.isFreeAppUser
     if (data) {
         req["isFreeAppUser"]=data
         next()
